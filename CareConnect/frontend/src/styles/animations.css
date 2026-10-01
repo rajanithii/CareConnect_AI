@@ -1,0 +1,42 @@
+/* Vital line — the signature ECG/pulse trace used across the product */
+.vital-path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: vital-draw 3.2s var(--ease-out-quart) forwards;
+}
+@keyframes vital-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.vital-scan {
+  stroke-dasharray: 60 1400;
+  animation: vital-scan 3.6s linear infinite;
+}
+@keyframes vital-scan {
+  0% { stroke-dashoffset: 1400; }
+  100% { stroke-dashoffset: -1400; }
+}
+
+/* Reveal-on-scroll base state (paired with IntersectionObserver hook) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out-quart), transform 0.7s var(--ease-out-quart);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .vital-path, .vital-scan {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

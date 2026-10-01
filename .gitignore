@@ -1,0 +1,57 @@
+# Python environments and generated files
+**/venv/
+**/env/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+**/serviceAccountKey.json
+**/*service-account*.json
+**/firebase-adminsdk*.json
+*.pem
+*.p12
+*.pfx
+
+# Node dependencies and React/Vite build output
+**/node_modules/
+**/dist/
+**/build/
+**/.vite/
+
+# IDE settings and local editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+*.bak
+
+# Local SQLite/database files
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Operating system files
+.DS_Store
+Thumbs.db
